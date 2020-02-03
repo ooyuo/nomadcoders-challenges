@@ -71,7 +71,7 @@ function switchToFinished(e) {
   const task = getPendingId(li.id);
   removePending(li.id);
   pushFinishedTask(task);
-  paintFinishedTasks(task);
+  paintTasks(task, "F");
   saveState();
 }
 
@@ -81,54 +81,43 @@ function switchToPending(e) {
   const task = getFinishedId(li.id);
   removeFinished(li.id);
   pushPendingTask(task);
-  paintPendingTasks(task);
+  paintTasks(task, "P");
   saveState();
 }
 
-function paintPendingTasks(taskObj) {
+function paintTasks(taskObj, target) {
   const li = document.createElement("li");
   const span = document.createElement("span");
   const delBtn = document.createElement("button");
-  const switchToF = document.createElement("button");
-  li.id = taskObj.id;
+  const switchTo = document.createElement("button");
 
+  li.id = taskObj.id;
   span.innerText = taskObj.task;
   delBtn.innerText = "❌";
   delBtn.addEventListener("click", removeTask);
-  switchToF.innerText = "✅";
-  switchToF.addEventListener("click", switchToFinished);
-
+  
   li.appendChild(span);
   li.appendChild(delBtn);
-  li.appendChild(switchToF);
-  pendingList.appendChild(li);
-}
-
-function paintFinishedTasks(taskObj) {
-  const li = document.createElement("li");
-  const span = document.createElement("span");
-  const delBtn = document.createElement("button");
-  const switchToP = document.createElement("button");
-  li.id = taskObj.id;
-
-  span.innerText = taskObj.task;
-  delBtn.innerText = "❌";
-  delBtn.addEventListener("click", removeTask);
-  switchToP.innerText = "💨";
-  switchToP.addEventListener("click", switchToPending);
-
-  li.appendChild(span);
-  li.appendChild(delBtn);
-  li.appendChild(switchToP);
-  finishedList.appendChild(li);
+  
+  if (target === "P") {
+    switchTo.innerText = "✅";
+    switchTo.addEventListener("click", switchToFinished);
+    li.appendChild(switchTo);
+    pendingList.appendChild(li);
+  } else {
+    switchTo.innerText = "💨";
+    switchTo.addEventListener("click", switchToPending);
+    li.appendChild(switchTo);
+    finishedList.appendChild(li);
+  }
 }
 
 function paintState() {
   pendingTasks.forEach(function(task) {
-    paintPendingTasks(task);
+    paintTasks(task,"P");
   });
   finishedTasks.forEach(function(task) {
-    paintFinishedTasks(task);
+    paintTasks(task, "F");
   });
 }
 
@@ -141,7 +130,7 @@ function handleFormSubmit(e) {
   e.preventDefault();
   const taskObj = getTaskObj(input.value);
   input.value = "";
-  paintPendingTasks(taskObj);
+  paintTasks(taskObj, "P");
   pushPendingTask(taskObj);
   saveState(taskObj);
 }
