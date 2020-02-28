@@ -1,0 +1,8 @@
+extends index
+
+block content
+  h1=movie.title
+  span=movie.summary
+  ul
+    each item in movie.genres
+      li=item

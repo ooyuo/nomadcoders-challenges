@@ -1,0 +1,17 @@
+extends index
+include ../mixins/movieBlock
+
+block content
+  if year
+    h1 Searching by year: #{year}
+  else if rating 
+    h1 Searching by rating: #{rating}
+  else
+    h1 Movies!
+  ul
+    each movie in movies
+      li(style="list-style: none")
+        +movieBlock({
+          id:movie.id,
+          title:movie.title
+        })

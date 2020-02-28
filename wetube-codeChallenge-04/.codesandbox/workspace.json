@@ -1,0 +1,145 @@
+{
+  "preview": [
+    {
+      "views": [
+        {
+          "id": "codesandbox.browser"
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 42405,
+            "url": "https://2tcmr-42405.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 41533,
+            "url": "https://2tcmr-41533.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 45653,
+            "url": "https://2tcmr-45653.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 44287,
+            "url": "https://2tcmr-44287.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 40129,
+            "url": "https://2tcmr-40129.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 45869,
+            "url": "https://2tcmr-45869.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 35237,
+            "url": "https://2tcmr-35237.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 36043,
+            "url": "https://2tcmr-36043.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 32893,
+            "url": "https://2tcmr-32893.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 44193,
+            "url": "https://2tcmr-44193.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 37753,
+            "url": "https://2tcmr-37753.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 34589,
+            "url": "https://2tcmr-34589.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 37377,
+            "url": "https://2tcmr-37377.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 43065,
+            "url": "https://2tcmr-43065.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 36757,
+            "url": "https://2tcmr-36757.sse.codesandbox.io"
+          },
+          "closeable": true
+        }
+      ]
+    },
+    {
+      "open": true,
+      "views": [
+        {
+          "id": "codesandbox.terminal"
+        },
+        {
+          "id": "codesandbox.console"
+        },
+        {
+          "id": "codesandbox.problems"
+        }
+      ]
+    }
+  ]
+}
