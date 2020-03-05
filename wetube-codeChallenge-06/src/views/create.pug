@@ -3,9 +3,9 @@ extends layouts/main
 block content
     h1 Create
     form(action="/create", method="post")
-        input(type="text", name="title", placeholder="Title", minlength="3")
-        input(type="text", name="year", placeholder="Year")
-        input(type="text", name="rating", placeholder="Rating")
-        textarea(name="synopsis", placeholder="Synopsis")
-        input(type="text", name="genres", placeholder="Genres")
+        input(type="text", name="title", placeholder="Title", minlength="3", required=true)
+        input(type="text", name="year", placeholder="Year", required=true)
+        input(type="text", name="rating", placeholder="Rating", required=true)
+        textarea(name="synopsis", placeholder="Synopsis", required=true)
+        input(type="text", name="genres", placeholder="Genres", required=true)
         input(type="submit", value="Submit")

@@ -1,10 +1,11 @@
 doctype html
 html
     head
-        title #{pageTitle}
+        title #{pageTitle} | #{siteTitle}
     body
         ul
-            li Home
+            a(href="/")
+                li Home
             a(href="/create")
                 li Create
         main
