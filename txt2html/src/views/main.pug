@@ -1,0 +1,9 @@
+doctype html
+html
+    head
+    body
+        h1 TXT2HTML!
+        div
+            form(action="/read", method="post", enctype="multipart/form-data")
+                input(type="file", accept=".txt", id="file", name="file")
+                input(type="submit", value="Convert!")
