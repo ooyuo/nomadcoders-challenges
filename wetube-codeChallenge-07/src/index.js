@@ -9,9 +9,10 @@ app.get("/", async (req, res) => {
     let {
         query: { url }
     } = req;
-
+    console.log(url);
     if ( !url.includes("http") ) {
         url = `http://${url}`;
+        console.log(url);
     }
     
     await request(url, function (error, response, body) {
