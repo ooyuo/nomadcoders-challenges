@@ -1,12 +1,14 @@
-import "./styles.css";
+
 
 const playBtn = document.getElementById("playBtn");
-//const videoContainer = document.getElementById("jsVideoPlayer");
-const videoPlayer = document.querySelector("video");
+const videoPlayer = document.getElementById("jsVideoPlayer");
 const muteBtn = document.getElementById("muteBtn");
-const range = document.getElementById("range");
+const volumeRange = document.getElementById("volumeRange");
 const currentTime = document.getElementById("currentTime");
 const totalTime = document.getElementById("totalTime");
+const timeSlider = document.getElementById("time-slider");
+const videoController = document.getElementById("videoplayerControl");
+const container = document.getElementById("container");
 
 function handlePlayBtn() {
   if (videoPlayer.paused) {
@@ -26,15 +28,16 @@ function handleMuteBtn() {
   if (videoPlayer.muted) {
     videoPlayer.muted = false;
     muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-    range.value = videoPlayer.volume;
+    volumeRange.value = videoPlayer.volume;
   } else {
     videoPlayer.muted = true;
     muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-    range.value = 0;
+    volumeRange.value = 0;
   }
 }
 function handleVideoEnded() {
   videoPlayer.currentTime = 0;
+  videoPlayer.play();
   playBtn.innerHTML = '<i class="fas fa-play"></i>';
 }
 function formatDate(seconds) {
@@ -56,12 +59,35 @@ function formatDate(seconds) {
 }
 function getCurrentTime() {
   currentTime.innerHTML = formatDate(videoPlayer.currentTime);
+  timeSlider.value = videoPlayer.currentTime;
 }
 function setTotalTime() {
   const totalTimeString = formatDate(videoPlayer.duration);
   totalTime.innerHTML = totalTimeString;
+  timeSlider.max = videoPlayer.duration;
   setInterval(getCurrentTime, 1000);
 }
+function handleTimeSlider() {
+  videoPlayer.currentTime = timeSlider.value;
+}
+
+function handleMouseMove() {
+  showController();
+}
+
+let timeOut;
+function showController() {
+  videoPlayer.style.cursor = 'default';
+  videoController.style.opacity = '1';
+  clearTimeout(timeOut);
+  timeOut = setTimeout(hideController, 3000);
+}
+
+function hideController() {
+  videoPlayer.style.cursor = 'none';
+  videoController.style.opacity = '0';
+}
+
 function init() {
   console.log("here");
   playBtn.addEventListener("click", handlePlayBtn);
@@ -69,6 +95,8 @@ function init() {
   muteBtn.addEventListener("click", handleMuteBtn);
   videoPlayer.addEventListener("ended", handleVideoEnded);
   videoPlayer.addEventListener("loadedmetadata", setTotalTime);
+  timeSlider.addEventListener("change", handleTimeSlider);
+  container.addEventListener("mousemove", handleMouseMove);
 }
 
 init();
