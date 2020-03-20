@@ -16,7 +16,5 @@
     "url": "https://github.com/ooyuo/nomadcoders-challenges/issues"
   },
   "homepage": "https://github.com/ooyuo/nomadcoders-challenges#readme",
-  "devDependencies": {
-  
-  }
+  "devDependencies": {}
 }
